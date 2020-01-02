@@ -1,0 +1,5 @@
+<ul>
+{% for blog in  latest_blog_list%}
+    <li><a href="{% url 'blog:detail' blog.id%}">{{ blog.title }} - by {{ blog.author }}</a></li>
+{% endfor %}
+</ul>
