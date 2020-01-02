@@ -20,11 +20,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from users import views as users_views
+
 app_name = "dalol"
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls, name="admin"),
-    path('', include("blog.urls"))
+    path('', include("blog.urls")),
+    path('register/', users_views.register, name='register'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
